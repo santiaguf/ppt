@@ -14,21 +14,31 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
-        showMenu(sc);
+        Menu(sc);
     }
     
-    public static void showMenu(Scanner sc){
+    public static void Menu(Scanner sc){
         int option = 0;
         do{
-            System.out.println("-----------------\n"
-                    + " Piedra, Papel o Tijera (escribe una opción y presiona enter) \n"
-                    + "1. Jugar \n"
-                    + "0. Salir");
+            showMainMenu();
             option = sc.nextInt();
             if(option == 1){
-                Game game = new Game();
+                showgamesMenu();
+                int games = sc.nextInt();
+                Game game = new Game(games);
             }
         }while(option != 0);
     }
-     
+    
+    public static void showMainMenu(){
+        System.out.println("-----------------\n"
+            + " Piedra, Papel o Tijera (escribe una opción y presiona enter) \n"
+            + "1. Jugar \n"
+            + "0. Salir");
+    }
+    
+    public static void showgamesMenu(){
+        System.out.println("-----------------\n"
+        + " escribe un número de partidas (se recomienda 5) \n");    
+    } 
 }
