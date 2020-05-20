@@ -14,7 +14,8 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class Game { 
     private final String validOptions[] = {"Tijera","Piedra","Papel"};
-    private final String match[][] = {{"Empate","Pierdes","Ganas"},{"Ganas","Empate","Pierdes"},{"Pierdes","Ganas","Empate"}};
+    private final int match[][] = {{0,2,1},{1,0,2},{2,1,0}};
+    private final String results[] = {"Empate","ganas","Pierdes"};
     private int matchResult = 0;
     Scanner sc = new Scanner(System.in);
     
@@ -22,8 +23,7 @@ public class Game {
         playGame(games);
     }
     
-    private void playGame(int games){
-        
+    private void playGame(int games){     
         for (int i = 0; i < games; i++) {
             int playerOption = getPlayerOption(sc);
             int machineOption = getMachineOption();
@@ -49,18 +49,16 @@ public class Game {
     }    
     
     private int getMatch(int playerOption, int machineOption){
-        System.out.println("La Pc seleccionó: "+ this.validOptions[machineOption]);
-        System.out.println("!!"+ this.match[playerOption][machineOption]+"\n");
         
-        switch (this.match[playerOption][machineOption]) {
-            case "Ganas":
-                return 1;
-            case "Pierdes":
-                return -1;
-            case "Empate":
-            default:
-                return 0;
+        System.out.println("La Pc seleccionó: "+ this.validOptions[machineOption]);
+        System.out.println("!!"+ this.results[this.match[playerOption][machineOption]]+"\n");
+        
+        int result = this.match[playerOption][machineOption];
+        if(result == 2){
+            result = -1;
         }
+        
+        return result;
     }
     
     private void getFinalResult(int matchResult){
