@@ -12,6 +12,10 @@ import java.util.Scanner;
  * @author santiago
  */
 public class Player {
+    private final String PLAYER_OPTION_MESSAGE = "-----------------\n"
+                    + "Escribe una opción,presiona enter y espera que la pc seleccione otra opción"
+                    + " 1. Piedra, 2. Papel o 3.Tijera \n";
+    
     Scanner sc = new Scanner(System.in);
     
     public Player(){
@@ -27,9 +31,7 @@ public class Player {
      */
     protected int getPlayerOption(int turn, int totalTurns){
         System.out.println("turn "+(++turn)+" of "+totalTurns+"\n"
-                    + "-----------------\n"
-                    + "Escribe una opción,presiona enter y espera que la pc seleccione otra opción"
-                    + " 1. Piedra, 2. Papel o 3.Tijera \n");
+                    + PLAYER_OPTION_MESSAGE);
         int option = sc.nextInt();
              
         if(option == 3){

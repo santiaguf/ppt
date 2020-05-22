@@ -10,6 +10,9 @@ package com.santiaguf.ppt;
  * @author santiago
  */
 public class Score {
+    private final String WIN = "Ganaste el juego";
+    private final String DRAW = "Empataste el juego";
+    private final String LOSE = "Perdiste el juego";
     public Score(){
     }
     
@@ -18,15 +21,14 @@ public class Score {
      * <b>pre: </b> number with result <br>
      * <b>post: </b> Message with final result.
      * @param matchResult result. matchResult != null
-     * @param totalTurns 
      */
     protected void getFinalResult(int matchResult){
         if(matchResult < 0){ 
-            System.out.println("Perdiste el juego");
+            System.out.println(LOSE);
         }else if(matchResult == 0){
-            System.out.println("Empataste el juego");
+            System.out.println(DRAW);
         }else{
-            System.out.println("Ganaste el juego");
+            System.out.println(WIN);
         }
     }    
 }

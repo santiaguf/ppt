@@ -14,6 +14,7 @@ public class Game {
     private final int match[][] = {{0,2,1},{1,0,2},{2,1,0}};
     private final String results[] = {"Empate","ganas","Pierdes"};
     private int matchResult = 0;
+    private final String MACHINE_OPTION = "La Pc seleccionó: ";
     
     Machine machine = new Machine();
     Player player = new Player();
@@ -48,7 +49,7 @@ public class Game {
      */
     private int getMatch(int playerOption, int machineOption){
         
-        System.out.println("La Pc seleccionó: "+ this.validOptions[machineOption]);
+        System.out.println(MACHINE_OPTION + this.validOptions[machineOption]);
         System.out.println("!!"+ this.results[this.match[playerOption][machineOption]]+"\n");
         
         int result = this.match[playerOption][machineOption];
