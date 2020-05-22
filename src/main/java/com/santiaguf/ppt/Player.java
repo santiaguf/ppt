@@ -17,8 +17,9 @@ public class Player {
     public Player(){
     }
     
-    protected int getPlayerOption(){
-        System.out.println("-----------------\n"
+    protected int getPlayerOption(int turn, int totalTurns){
+        System.out.println("turn "+(++turn)+" of "+totalTurns+"\n"
+                    + "-----------------\n"
                     + "Escribe una opción,presiona enter y espera que la pc seleccione otra opción"
                     + " 1. Piedra, 2. Papel o 3.Tijera \n");
         int option = sc.nextInt();

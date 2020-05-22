@@ -25,7 +25,7 @@ public class Game {
     
     private void playGame(int games){     
         for (int i = 0; i < games; i++) {
-            int playerOption = player.getPlayerOption();
+            int playerOption = player.getPlayerOption(i,games);
             int machineOption = machine.getMachineOption();
             this.matchResult += getMatch(playerOption, machineOption);
         }
@@ -45,5 +45,4 @@ public class Game {
         return result;
     }
     
-
 }
