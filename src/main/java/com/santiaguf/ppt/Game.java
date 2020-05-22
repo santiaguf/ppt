@@ -6,7 +6,6 @@
 package com.santiaguf.ppt;
 
 import java.util.Scanner;
-import java.util.concurrent.ThreadLocalRandom;
 
 /**
  *
@@ -18,6 +17,7 @@ public class Game {
     private final String results[] = {"Empate","ganas","Pierdes"};
     private int matchResult = 0;
     Scanner sc = new Scanner(System.in);
+    Machine machine = new Machine();
     
     public Game(int games) {
         playGame(games);
@@ -26,7 +26,7 @@ public class Game {
     private void playGame(int games){     
         for (int i = 0; i < games; i++) {
             int playerOption = getPlayerOption(sc);
-            int machineOption = getMachineOption();
+            int machineOption = machine.getMachineOption();
             this.matchResult += getMatch(playerOption, machineOption);
         }
         getFinalResult(this.matchResult);   
@@ -44,9 +44,7 @@ public class Game {
         return option;
     }
     
-    private static int getMachineOption(){
-        return ThreadLocalRandom.current().nextInt(0, 2 + 1);
-    }    
+  
     
     private int getMatch(int playerOption, int machineOption){
         
