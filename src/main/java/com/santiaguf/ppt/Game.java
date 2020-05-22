@@ -38,6 +38,14 @@ public class Game {
         score.getFinalResult(this.matchResult);   
     }
     
+    /**
+     * Get the result of a Match (turn). <br>
+     * <b>pre: </b> Player and machine Options . <br>
+     * <b>post: </b> the option machine selected. 
+     * @param playerOption the option user selected. playerOption>0 && playerOption != null.
+     * @param machineOption the option machine selected. machineOption>0 && machineOption != null.
+     * @return result of the match (turn). 
+     */
     private int getMatch(int playerOption, int machineOption){
         
         System.out.println("La Pc seleccionó: "+ this.validOptions[machineOption]);

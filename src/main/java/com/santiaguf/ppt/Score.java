@@ -14,13 +14,14 @@ public class Score {
     }
     
     /**
-     * Show the final result. <br>
+     * Show the final result.<br>
      * <b>pre: </b> number with result <br>
      * <b>post: </b> Message with final result.
      * @param matchResult result. matchResult != null
+     * @param totalTurns 
      */
     protected void getFinalResult(int matchResult){
-        if(matchResult < 0){
+        if(matchResult < 0){ 
             System.out.println("Perdiste el juego");
         }else if(matchResult == 0){
             System.out.println("Empataste el juego");
