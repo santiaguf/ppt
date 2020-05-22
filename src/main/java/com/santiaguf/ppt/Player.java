@@ -17,6 +17,14 @@ public class Player {
     public Player(){
     }
     
+    /**
+     * Ask user for a option (piedra, papel o tijera). <br>
+     * <b>pre: </b> current turn and total turns <br>
+     * <b>post: </b> the option user selected.
+     * @param turn current turn.
+     * @param totalTurns total turns.
+     * @return option user selected. 
+     */
     protected int getPlayerOption(int turn, int totalTurns){
         System.out.println("turn "+(++turn)+" of "+totalTurns+"\n"
                     + "-----------------\n"

@@ -19,13 +19,19 @@ public class Game {
     Player player = new Player();
     Score score = new Score();
     
-    public Game(int games) {
-        playGame(games);
+    public Game(int turns) {
+        playGame(turns);
     }
     
-    private void playGame(int games){     
-        for (int i = 0; i < games; i++) {
-            int playerOption = player.getPlayerOption(i,games);
+    /**
+     * Create a Game with turns and show final result. <br>
+     * <b>pre: </b> the number of turns. turns>0 && turns != null. <br>
+     * <b>post: </b> turns for the game.
+     * @param turns number of turns in the game.
+     */
+    private void playGame(int turns){     
+        for (int i = 0; i < turns; i++) {
+            int playerOption = player.getPlayerOption(i,turns);
             int machineOption = machine.getMachineOption();
             this.matchResult += getMatch(playerOption, machineOption);
         }

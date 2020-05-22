@@ -16,6 +16,12 @@ public class Machine {
     public Machine(){
     }
     
+    /**
+     * generate random option by machine.  <br>
+     * <b>pre: </b> nothing. <br>
+     * <b>post: </b> the option machine selected. 
+     * @return the option machine selected.
+     */
     protected int getMachineOption(){
         return ThreadLocalRandom.current().nextInt(0, 2 + 1);
     }  

@@ -13,6 +13,12 @@ public class Score {
     public Score(){
     }
     
+    /**
+     * Show the final result. <br>
+     * <b>pre: </b> number with result <br>
+     * <b>post: </b> Message with final result.
+     * @param matchResult result. matchResult != null
+     */
     protected void getFinalResult(int matchResult){
         if(matchResult < 0){
             System.out.println("Perdiste el juego");
