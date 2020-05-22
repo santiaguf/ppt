@@ -17,6 +17,7 @@ public class Game {
     
     Machine machine = new Machine();
     Player player = new Player();
+    Score score = new Score();
     
     public Game(int games) {
         playGame(games);
@@ -28,7 +29,7 @@ public class Game {
             int machineOption = machine.getMachineOption();
             this.matchResult += getMatch(playerOption, machineOption);
         }
-        getFinalResult(this.matchResult);   
+        score.getFinalResult(this.matchResult);   
     }
     
     private int getMatch(int playerOption, int machineOption){
@@ -44,13 +45,5 @@ public class Game {
         return result;
     }
     
-    private void getFinalResult(int matchResult){
-        if(matchResult < 0){
-            System.out.println("Perdiste el juego");
-        }else if(matchResult == 0){
-            System.out.println("Empataste el juego");
-        }else{
-            System.out.println("Ganaste el juego");
-        }
-    }
+
 }
