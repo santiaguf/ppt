@@ -5,8 +5,6 @@
  */
 package com.santiaguf.ppt;
 
-import java.util.Scanner;
-
 /**
  *
  * @author santiago
@@ -16,8 +14,9 @@ public class Game {
     private final int match[][] = {{0,2,1},{1,0,2},{2,1,0}};
     private final String results[] = {"Empate","ganas","Pierdes"};
     private int matchResult = 0;
-    Scanner sc = new Scanner(System.in);
+    
     Machine machine = new Machine();
+    Player player = new Player();
     
     public Game(int games) {
         playGame(games);
@@ -25,26 +24,12 @@ public class Game {
     
     private void playGame(int games){     
         for (int i = 0; i < games; i++) {
-            int playerOption = getPlayerOption(sc);
+            int playerOption = player.getPlayerOption();
             int machineOption = machine.getMachineOption();
             this.matchResult += getMatch(playerOption, machineOption);
         }
         getFinalResult(this.matchResult);   
     }
-    
-    private static int getPlayerOption(Scanner sc){
-        System.out.println("-----------------\n"
-                    + "Escribe una opción,presiona enter y espera que la pc seleccione otra opción"
-                    + " 1. Piedra, 2. Papel o 3.Tijera \n");
-        int option = sc.nextInt();
-             
-        if(option == 3){
-            option = 0;
-        }   
-        return option;
-    }
-    
-  
     
     private int getMatch(int playerOption, int machineOption){
         
