@@ -20,8 +20,8 @@ public class Game {
     Player player = new Player();
     Score score = new Score();
     
-    public Game(int turns) {
-        playGame(turns);
+    public Game(int turns, UserInput ui) {
+        playGame(turns, ui);
     }
     
     /**
@@ -29,10 +29,11 @@ public class Game {
      * <b>pre: </b> the number of turns. turns>0 && turns != null. <br>
      * <b>post: </b> turns for the game.
      * @param turns number of turns in the game.
+     * @param ui object of UserInput class to read user input.
      */
-    private void playGame(int turns){     
+    private void playGame(int turns, UserInput ui){     
         for (int i = 0; i < turns; i++) {
-            int playerOption = player.getPlayerOption(i,turns);
+            int playerOption = player.getPlayerOption(i,turns, ui);
             int machineOption = machine.getMachineOption();
             this.matchResult += getMatch(playerOption, machineOption);
         }
